@@ -5,40 +5,40 @@
 class IpfsCli < Formula
   desc "Official Pinata IPFS CLI written in Go"
   homepage "https://github.com/PinataCloud/ipfs-cli"
-  version "0.1.1"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/PinataCloud/ipfs-cli/releases/download/v0.1.1/ipfs-cli_Darwin_x86_64.tar.gz"
-      sha256 "f23fc9c3d48477ca91ac1d002f4e6c51d0246e8048af03f5e573e7a8fbf9c431"
+      url "https://github.com/PinataCloud/ipfs-cli/releases/download/v0.2.0/ipfs-cli_Darwin_x86_64.tar.gz"
+      sha256 "9018d6256e2ec521f90a1bfeac3fafafab9dfee5ae26d45bc60c952b81bc76cf"
 
-      def install
+      define_method(:install) do
         bin.install "pinata"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/PinataCloud/ipfs-cli/releases/download/v0.1.1/ipfs-cli_Darwin_arm64.tar.gz"
-      sha256 "cf2bd6e6caee6f8cf7035898419187a23708e36b9fc5a14d8ff50f421444d576"
+      url "https://github.com/PinataCloud/ipfs-cli/releases/download/v0.2.0/ipfs-cli_Darwin_arm64.tar.gz"
+      sha256 "efc7036ed2c62925fd503481afcd4935ce778bd5edfdaf047a1ced80cf8bb147"
 
-      def install
+      define_method(:install) do
         bin.install "pinata"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/PinataCloud/ipfs-cli/releases/download/v0.1.1/ipfs-cli_Linux_x86_64.tar.gz"
-      sha256 "7a0a871e6c4306f81c9d932ebf4bcfe2bceaf121abc0691d88758f4bf3a3f663"
-      def install
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/PinataCloud/ipfs-cli/releases/download/v0.2.0/ipfs-cli_Linux_x86_64.tar.gz"
+      sha256 "bffc95694ae68da8c5ea5bfe62e3754bc024775acd305b76e0afceb45763b1a3"
+      define_method(:install) do
         bin.install "pinata"
       end
     end
-    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/PinataCloud/ipfs-cli/releases/download/v0.1.1/ipfs-cli_Linux_arm64.tar.gz"
-      sha256 "1ebb606cda89ba4ebdda65bccfa42afcc2ec6688af5cd882b42c2d5a3a09b0b5"
-      def install
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/PinataCloud/ipfs-cli/releases/download/v0.2.0/ipfs-cli_Linux_arm64.tar.gz"
+      sha256 "47aac45b7d7fe9ae7499740b14a525c427fddbcda21651c419e924d472e61465"
+      define_method(:install) do
         bin.install "pinata"
       end
     end
